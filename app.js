@@ -1,34 +1,31 @@
-function goDiscover() {
-  const timeText = document.getElementById("timeInput").value;
-  const interest = document.getElementById("interestSelect").value;
-  const result = document.getElementById("result");
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Dead Time Tourism</title>
 
-  const minutes = timeText.includes("giờ")
-    ? parseInt(timeText) * 60
-    : parseInt(timeText);
+  <!-- LOAD CSS -->
+  <link rel="stylesheet" href="style.cssss="app-header">
+  <h2>Dead Time Tourism</h2>
+</header>
 
-  const experiences = [
-    { name: "Ăn nhanh món địa phương", min: 30, max: 60, interest: "Ẩm thực" },
-    { name: "Uống cà phê", min: 15, max: 30, interest: "Nghỉ ngơi" },
-    { name: "Dạo phố check‑in", min: 60, max: 120, interest: "Khám phá" }
-  ];
+<main class="app">
+  <h1>Tối ưu thời gian rảnh</h1>
+  <p>Bạn có bao nhiêu thời gian?</p>
 
-  let html = "<div class='cards'>";
-  let found = false;
+  <input id="timeInput" placeholder="Ví dụ: 45 phút">
+  <select id="interestSelect">
+    <option>Ẩm thực</option>
+    <option>Nghỉ ngơi</option>
+    <option>Khám phá</option>
+  </select>
+  <button onclick="goDiscover()">Tìm trải nghiệm phù hợp</button>
 
-  experiences.forEach(exp => {
-    if (exp.interest === interest && minutes >= exp.min && minutes <= exp.max) {
-      html += `
-        <div class="card">
-          <strong>${exp.name}</strong><br>
-          ⏱ ${exp.min}-${exp.max} phút<br>
-          <span class="tag">${exp.interest}</span>
-        </div>`;
-      found = true;
-    }
-  });
+  <div id="result"></div>
+</main>
 
-  html += "</div>";
-  result.innerHTML = found ? html : "Không có trải nghiệm phù hợp.";
-}
+<!-- LOAD JS -->
+<script src="app
+</body>
+</html>
 ``
