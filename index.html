@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Dead Time Tourism</title>
 
-  <!-- ✅ CSS (CÚ PHÁP ĐÚNG DUY NHẤT) -->
-  style.css
+  <!-- CSS: BẮT BUỘC để có màu -->
+  <link rel="stylesheet" href="style.css">
 
-  <!-- ✅ PWA -->
-  <anifest.json
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0066ff">
 </head>
 
@@ -35,8 +35,10 @@
   <div id="result" class="result"></div>
 </main>
 
-<!-- ✅ JS (CÚ PHÁP ĐÚNG DUY NHẤT) -->
-<script src="app.js-- ✅ Service Worker -->
+<!-- JavaScript -->
+<script src="app.js"></script>
+
+<!-- Service Worker -->
 <script>
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js");
@@ -45,4 +47,3 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
-``
