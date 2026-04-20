@@ -4,10 +4,45 @@ function goDiscover() {
   const result = document.getElementById("result");
 
   if (!time) {
-    result.innerText = "Vui lòng nhập thời gian rảnh.";
+    result.innerHTML = "<p>Vui lòng nhập thời gian rảnh.</p>";
     return;
   }
 
-  result.innerText =
-    `Với ${time} rảnh và sở thích ${interest}, bạn có thể chọn một trải nghiệm ngắn phù hợp gần bạn.`;
+  const experiences = [
+    {
+      name: "Uống cà phê gần bạn",
+      duration: "15–30 phút",
+      type: "Micro",
+      interest: "Nghỉ ngơi"
+    },
+    {
+      name: "Ăn nhanh món địa phương",
+      duration: "30–60 phút",
+      type: "Short",
+      interest: "Ẩm thực"
+    },
+    {
+      name: "Dạo phố & check‑in",
+      duration: "60–120 phút",
+      type: "Medium",
+      interest: "Khám phá"
+    }
+  ];
+
+  let html = `<h3>Gợi ý cho ${time} (${interest})</h3><div class="cards">`;
+
+  experiences.forEach(exp => {
+    if (exp.interest === interest) {
+      html += `
+        <div class="card">
+          <h4>${exp.name}</h4>
+          <p>⏱ ${exp.duration}</p>
+          <span class="tag">${exp.type}</span>
+        </div>
+      `;
+    }
+  });
+
+  html += "</div>";
+  result.innerHTML = html;
 }
