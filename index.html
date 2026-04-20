@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Dead Time Tourism</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0066ff">
 </head>
 <body>
 
@@ -28,7 +34,15 @@
   <div id="result" class="result"></div>
 </main>
 
+<!-- JS -->
 <script src="app.js"></script>
+
+<!-- Service Worker -->
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
+
 </body>
 </html>
-``
