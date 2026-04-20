@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+}
+
+.app-header {
+  background: #0066ff;
+  color: white;
+  padding: 14px;
+  text-align: center;
+}
+
+.app {
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.quick-fix {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.quick-fix input,
+.quick-fix select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.quick-fix button {
+  padding: 12px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+``
