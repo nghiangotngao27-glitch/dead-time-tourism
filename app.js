@@ -29,10 +29,8 @@ function goDiscover() {
     }
   ];
 
-  let html = `
-    <h3>Gợi ý cho ${time} (${interest})</h3>
-    <div class="cards">
-  `;
+  let html = `<h3>Gợi ý cho ${time} (${interest})</h3>
+              <div class="cards">`;
 
   experiences.forEach(exp => {
     if (exp.interest === interest) {
