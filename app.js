@@ -13,9 +13,7 @@ const EXPERIENCES = [
     priceRange: "30k–60k",
     rating: 4.2,
     bookingAvailable: false,
-    partner: "Cafe Corner",
-    lat: 21.032,
-    lng: 105.848
+    partner: "Cafe Corner"
   },
   {
     id: 2,
@@ -31,9 +29,7 @@ const EXPERIENCES = [
     priceRange: "50k–120k",
     rating: 4.6,
     bookingAvailable: true,
-    partner: "Bún Phố Cổ",
-    lat: 21.033,
-    lng: 105.850
+    partner: "Bún Phố Cổ"
   },
   {
     id: 3,
@@ -49,9 +45,7 @@ const EXPERIENCES = [
     priceRange: "150k–300k",
     rating: 4.4,
     bookingAvailable: true,
-    partner: "Mini Spa Relax",
-    lat: 21.030,
-    lng: 105.845
+    partner: "Mini Spa Relax"
   },
   {
     id: 4,
@@ -67,8 +61,6 @@ const EXPERIENCES = [
     priceRange: "Miễn phí",
     rating: 4.8,
     bookingAvailable: false,
-    partner: "Tour đi bộ",
-    lat: 21.035,
-    lng: 105.852
+    partner: "Tour đi bộ"
   }
 ];
