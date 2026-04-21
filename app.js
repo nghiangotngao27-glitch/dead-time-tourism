@@ -1,73 +1,74 @@
-function goDiscover() {
-  const timeText = document.getElementById("timeInput").value;
-  const interest = document.getElementById("interestSelect").value;
-  const result = document.getElementById("result");
-
-  // Kiểm tra input
-  if (!timeText) {
-    result.innerHTML = "<p>Vui lòng nhập thời gian.</p>";
-    return;
+const EXPERIENCES = [
+  {
+    id: 1,
+    name: "Cà phê check‑in nhanh",
+    category: "Nghỉ ngơi",
+    type: "Micro",
+    minTime: 15,
+    maxTime: 45,
+    avgDuration: 30,
+    distanceKm: 0.3,
+    openFrom: 7,
+    openTo: 23,
+    priceRange: "30k–60k",
+    rating: 4.2,
+    bookingAvailable: false,
+    partner: "Cafe Corner",
+    lat: 21.032,
+    lng: 105.848
+  },
+  {
+    id: 2,
+    name: "Ăn nhanh món địa phương",
+    category: "Ẩm thực",
+    type: "Short",
+    minTime: 30,
+    maxTime: 60,
+    avgDuration: 45,
+    distanceKm: 0.8,
+    openFrom: 10,
+    openTo: 22,
+    priceRange: "50k–120k",
+    rating: 4.6,
+    bookingAvailable: true,
+    partner: "Bún Phố Cổ",
+    lat: 21.033,
+    lng: 105.850
+  },
+  {
+    id: 3,
+    name: "Spa mini thư giãn",
+    category: "Nghỉ ngơi",
+    type: "Short",
+    minTime: 60,
+    maxTime: 120,
+    avgDuration: 90,
+    distanceKm: 1.2,
+    openFrom: 9,
+    openTo: 21,
+    priceRange: "150k–300k",
+    rating: 4.4,
+    bookingAvailable: true,
+    partner: "Mini Spa Relax",
+    lat: 21.030,
+    lng: 105.845
+  },
+  {
+    id: 4,
+    name: "Tham quan phố cổ",
+    category: "Khám phá",
+    type: "Medium",
+    minTime: 120,
+    maxTime: 240,
+    avgDuration: 180,
+    distanceKm: 0.5,
+    openFrom: 0,
+    openTo: 24,
+    priceRange: "Miễn phí",
+    rating: 4.8,
+    bookingAvailable: false,
+    partner: "Tour đi bộ",
+    lat: 21.035,
+    lng: 105.852
   }
-
-  // Chuẩn hóa số phút
-  let minutes = Number.parseInt(timeText);
-  if (timeText.includes("giờ")) {
-    minutes = Number.parseInt(timeText) * 60;
-  }
-
-  if (isNaN(minutes)) {
-    result.innerHTML = "<p>Thời gian không hợp lệ.</p>";
-    return;
-  }
-
-  // Dữ liệu trải nghiệm
-  const experiences = [
-    {
-      name: "Ăn nhanh món địa phương",
-      min: 30,
-      max: 60,
-      interest: "Ẩm thực"
-    },
-    {
-      name: "Uống cà phê",
-      min: 15,
-      max: 30,
-      interest: "Nghỉ ngơi"
-    },
-    {
-      name: "Dạo phố check‑in",
-      min: 60,
-      max: 120,
-      interest: "Khám phá"
-    }
-  ];
-
-  let found = false;
-
-  // Bắt đầu render card
-  let html = `<div class="cards">`;
-
-  experiences.forEach(exp => {
-    if (
-      exp.interest.trim() === interest.trim() &&
-      minutes >= exp.min &&
-      minutes <= exp.max
-    ) {
-      found = true;
-      html += `
-        <div class="card">
-          <strong>${exp.name}</strong><br>
-          ⏱ ${exp.min}–${exp.max} phút<br>
-          <span class="tag">${exp.interest}</span>
-        </div>
-      `;
-    }
-  });
-
-  html += `</div>`;
-
-  // In kết quả
-  result.innerHTML = found
-    ? html
-    : "<p>Không có trải nghiệm phù hợp với thời gian này.</p>";
-}
+];
